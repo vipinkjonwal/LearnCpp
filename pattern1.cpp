@@ -5,18 +5,24 @@
   ***
 */
 
+/*
+Correction :
+It is not advisable to use goto statement in C++ because it breaks the usual flow of program.
+We can use loops and conditional statements to check it.
+*/
+
 #include <iostream>
 using namespace std;
 
 int main() {
   int nRows;
 
-  label:
   cout << "Enter number of rows you want to print: ";
   cin >> nRows;
-  if (nRows < 0) {
+  while(nRows < 0){
     cout << "Oops..Enter a positive number..!\n";
-    goto label;
+    cout << "Enter Again: ";
+    cin >> nRows;
   }
 
   for (int i=1; i<=nRows; i++) {
